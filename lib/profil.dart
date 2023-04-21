@@ -12,7 +12,9 @@ class profil extends StatelessWidget {
         title: const Text('Profil Saya', style: TextStyle(fontWeight: FontWeight.bold)),
       ),
       body: SingleChildScrollView(
-        child: Column(
+        child: Container(
+          padding: const EdgeInsets.all(15),
+          child: Column(
           children: [
             // Images Profil
             SizedBox(
@@ -71,6 +73,8 @@ class profil extends StatelessWidget {
               ))
           ],
           ) 
+        
+        ),
         ),
     );
   }

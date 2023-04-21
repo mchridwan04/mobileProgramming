@@ -17,9 +17,9 @@ class _widgetVisible extends State<widgetVisible> {
 
   // Data
   List daftarWidgetVisible = [
-    ['Text', 'asstes/icons/text.png', false],
-    ['Icon', 'asstes/icons/icon.png', false],
-    ['Button', 'asstes/icons/button.png', false]
+    ['Text', 'assets/icons/text.png', false],
+    ['Icon', 'assets/icons/icon.png', false],
+    ['Button', 'assets/icons/button.png', false]
   ];
 
   void toggleInfo(bool value, int index) {

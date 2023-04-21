@@ -18,7 +18,7 @@ class Beranda extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         leading: const Icon(Icons.home),
-        title: const Text('Tugas Mandiri 1', style: TextStyle(fontWeight: FontWeight.bold)),
+        title: const Text('Mochamad Ridwan', style: TextStyle(fontWeight: FontWeight.bold)),
       ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -50,6 +50,14 @@ class Beranda extends StatelessWidget {
                 child: ElevatedButton.icon(
                   onPressed: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => const widgetVisible())); },
                   icon: const Icon(Icons.widgets_rounded), label: const Text('Widget Visible'),
+                  style: ElevatedButton.styleFrom(minimumSize: const Size(300, 50), backgroundColor: Colors.green),
+                ),
+              ),
+              const SizedBox(height: 10),
+              ButtonTheme(
+                child: ElevatedButton.icon(
+                  onPressed: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => const profil())); },
+                  icon: const Icon(Icons.widgets_rounded), label: const Text('Widget Invisible'),
                   style: ElevatedButton.styleFrom(minimumSize: const Size(300, 50), backgroundColor: Colors.green),
                 ),
               ),
