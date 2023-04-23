@@ -6,16 +6,16 @@ class widgetVisible extends StatefulWidget {
 
   @override
   State<widgetVisible> createState() => _widgetVisible();
-
 }
 
 class _widgetVisible extends State<widgetVisible> {
-  // Mangatur nilai padding
+// Mangatur nilai padding
 
   final double horizontalPadding = 40;
   final double verticalPadding = 25;
 
-  // Data
+// Data Image
+// TODO: Replace name images 
   List daftarWidgetVisible = [
     ['Text', 'assets/icons/text.png', false],
     ['Icon', 'assets/icons/icon.png', false],
