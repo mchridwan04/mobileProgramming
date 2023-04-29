@@ -31,7 +31,8 @@ class profil extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(onPressed: () {}, child: FaIcon(FontAwesomeIcons.facebook), style: ElevatedButton.styleFrom(shape: const CircleBorder(), backgroundColor: Colors.blue)),
+                ElevatedButton(onPressed: () {}, 
+                child: FaIcon(FontAwesomeIcons.facebook), style: ElevatedButton.styleFrom(shape: const CircleBorder(), backgroundColor: Colors.blue)),
               ],
             ),
 

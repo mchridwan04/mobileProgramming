@@ -40,7 +40,8 @@ class Beranda extends StatelessWidget {
               ButtonTheme(
                 child: ElevatedButton.icon(
                   onPressed: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => const profil())); },
-                  icon: const Icon(Icons.person), label: const Text('Profil Saya'),
+                  icon: const Icon(Icons.person), 
+                  label: const Text('Profil Saya'),
                   style: ElevatedButton.styleFrom(minimumSize: const Size(300, 50)),
                 ),
               ),
@@ -49,7 +50,8 @@ class Beranda extends StatelessWidget {
               ButtonTheme(
                 child: ElevatedButton.icon(
                   onPressed: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => const widgetVisible())); },
-                  icon: const Icon(Icons.widgets_rounded), label: const Text('Widget Visible'),
+                  icon: const Icon(Icons.widgets_rounded), 
+                  label: const Text('Widget Visible'),
                   style: ElevatedButton.styleFrom(minimumSize: const Size(300, 50), backgroundColor: Colors.green),
                 ),
               ),
@@ -57,11 +59,13 @@ class Beranda extends StatelessWidget {
               ButtonTheme(
                 child: ElevatedButton.icon(
                   onPressed: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => const profil())); },
-                  icon: const Icon(Icons.widgets_rounded), label: const Text('Widget Invisible'),
+                  icon: const Icon(Icons.widgets_rounded), 
+                  label: const Text('Widget Invisible'),
                   style: ElevatedButton.styleFrom(minimumSize: const Size(300, 50), backgroundColor: Colors.green),
                 ),
               ),
-            ]),
+            ]
+          ),
         ) 
       ),
 
