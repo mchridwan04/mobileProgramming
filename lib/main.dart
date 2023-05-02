@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mandiri1/profil.dart';
 import 'package:mandiri1/widgetVisible.dart';
+import 'package:mandiri1/halWidgetInvisible.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -58,12 +59,14 @@ class Beranda extends StatelessWidget {
               const SizedBox(height: 10),
               ButtonTheme(
                 child: ElevatedButton.icon(
-                  onPressed: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => const profil())); },
+                  onPressed: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => const HalWidgetInvisible())); },
                   icon: const Icon(Icons.widgets_rounded), 
                   label: const Text('Widget Invisible'),
                   style: ElevatedButton.styleFrom(minimumSize: const Size(300, 50), backgroundColor: Colors.green),
                 ),
               ),
+
+
             ]
           ),
         ) 

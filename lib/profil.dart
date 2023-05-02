@@ -74,7 +74,6 @@ class profil extends StatelessWidget {
               ))
           ],
           ) 
-        
         ),
         ),
     );
