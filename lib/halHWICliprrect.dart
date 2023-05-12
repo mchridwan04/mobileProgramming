@@ -14,14 +14,13 @@ class HalHWICliprrect extends StatelessWidget {
         ),
       ),
       body: Center(
-        child: SizedBox(
-          width: 300,
-          height: 300,
-          child: ClipRRect(
-              borderRadius: BorderRadius.circular(150),
-              child:
-                  const Image(image: AssetImage('assets/images/profil.png'))),
-        ),
+        child: ClipRRect(
+            borderRadius: BorderRadius.circular(150),
+            child: Container(
+              height: 300,
+              width: 300,
+              color: Colors.deepPurple,
+            )),
       ),
     );
   }
