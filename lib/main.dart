@@ -1,77 +1,82 @@
 import 'package:flutter/material.dart';
-import 'package:mandiri1/profil.dart';
-import 'package:mandiri1/widgetVisible.dart';
-import 'package:mandiri1/halWidgetInvisible.dart';
 
 void main() {
   runApp(const MaterialApp(
-    title: 'Mochamad Ridwan',
-    home: Beranda(),
+    title: 'Aplikasi',
+    home: login(),
   ));
 }
 
-class Beranda extends StatelessWidget {
-  const Beranda ({super.key});
+class login extends StatelessWidget {
+  const login({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: const Text(
+          'Aplikasi',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        backgroundColor: Colors.greenAccent,
         centerTitle: true,
-        leading: const Icon(Icons.home),
-        title: const Text('Mochamad Ridwan', style: TextStyle(fontWeight: FontWeight.bold)),
       ),
-      backgroundColor: Colors.white,
-      body: SingleChildScrollView(
+      body: Padding(
+        padding: const EdgeInsets.all(10.0),
         child: Center(
           child: Column(
             children: [
-              // Logo
-              const SizedBox(height: 50),
-              const Icon(Icons.flutter_dash, size: 120, color: Colors.blue),
-
-              // Teks Pembuka
-              const SizedBox(height: 50),
-              const Text('Selamat Datang', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-
-              const SizedBox(height: 20),
-              const Text('Silakan pilih menu :', style: TextStyle(fontSize: 14)),
-
-              const SizedBox(height: 10),
+              const Icon(
+                Icons.person_pin,
+                size: 150,
+                color: Colors.blueGrey,
+              ),
+              const Text(
+                'Selamat Datang',
+                style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.green,
+                    fontWeight: FontWeight.bold),
+              ),
+              const Text(
+                'Silahkan masuk :',
+                style: TextStyle(fontSize: 15),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              TextFormField(
+                decoration: const InputDecoration(
+                    label: Text('Username'),
+                    prefixIcon: Icon(Icons.person),
+                    border: OutlineInputBorder()),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              TextFormField(
+                initialValue: '',
+                decoration: const InputDecoration(
+                    label: Text('Password'),
+                    prefixIcon: Icon(Icons.lock),
+                    border: OutlineInputBorder()),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
               ButtonTheme(
                 child: ElevatedButton.icon(
-                  onPressed: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => const profil())); },
-                  icon: const Icon(Icons.person), 
-                  label: const Text('Profil Saya'),
-                  style: ElevatedButton.styleFrom(minimumSize: const Size(300, 50)),
+                  onPressed: () {},
+                  icon: const Icon(Icons.login),
+                  label: const Text('Masuk'),
+                  style: ElevatedButton.styleFrom(
+                      minimumSize: const Size.fromHeight(50)),
                 ),
-              ),
-
-              const SizedBox(height: 10),
-              ButtonTheme(
-                child: ElevatedButton.icon(
-                  onPressed: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => const widgetVisible())); },
-                  icon: const Icon(Icons.widgets_rounded), 
-                  label: const Text('Widget Visible'),
-                  style: ElevatedButton.styleFrom(minimumSize: const Size(300, 50), backgroundColor: Colors.green),
-                ),
-              ),
-              const SizedBox(height: 10),
-              ButtonTheme(
-                child: ElevatedButton.icon(
-                  onPressed: (){ Navigator.push(context, MaterialPageRoute(builder: (context) => const HalWidgetInvisible())); },
-                  icon: const Icon(Icons.widgets_rounded), 
-                  label: const Text('Widget Invisible'),
-                  style: ElevatedButton.styleFrom(minimumSize: const Size(300, 50), backgroundColor: Colors.green),
-                ),
-              ),
-
-
-            ]
+              )
+            ],
           ),
-        ) 
+        ),
       ),
-
     );
   }
 }
