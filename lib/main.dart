@@ -70,7 +70,8 @@ class login extends StatelessWidget {
                   icon: const Icon(Icons.login),
                   label: const Text('Masuk'),
                   style: ElevatedButton.styleFrom(
-                      minimumSize: const Size.fromHeight(50)),
+                      minimumSize: const Size.fromHeight(50),
+                      backgroundColor: Colors.blueGrey),
                 ),
               )
             ],
