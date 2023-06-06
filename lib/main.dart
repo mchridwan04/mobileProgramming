@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:mandiri1/beranda.dart';
 
 void main() {
   runApp(const MaterialApp(
     title: 'Aplikasi',
     home: login(),
+    debugShowCheckedModeBanner: false,
   ));
 }
 
@@ -66,7 +68,10 @@ class login extends StatelessWidget {
               ),
               ButtonTheme(
                 child: ElevatedButton.icon(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => beranda()));
+                  },
                   icon: const Icon(Icons.login),
                   label: const Text('Masuk'),
                   style: ElevatedButton.styleFrom(
