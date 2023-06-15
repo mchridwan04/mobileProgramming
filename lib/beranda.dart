@@ -1,43 +1,130 @@
 import 'package:flutter/material.dart';
-import 'package:mandiri1/berandaPost.dart';
 
 class beranda extends StatelessWidget {
-  final List _posts = [
-    'https://images.unsplash.com/photo-1682687220247-9f786e34d472?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxMjV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60',
-    'https://plus.unsplash.com/premium_photo-1685053085344-c6171e7ddafa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80',
-    'https://images.unsplash.com/photo-1686007579079-550a74a0decb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=600&q=60',
-    'https://images.unsplash.com/photo-1682687220247-9f786e34d472?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxMjV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60',
-    'https://plus.unsplash.com/premium_photo-1685053085344-c6171e7ddafa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80',
-    'https://images.unsplash.com/photo-1686007579079-550a74a0decb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=600&q=60',
-  ];
-
+  const beranda({super.key});
+//mengatur nilai padding
+  final double horizontalPadding = 40;
+  final double verticalPadding = 25;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[100],
       body: Column(
         children: [
-          const SizedBox(),
-          Expanded(
-            child: ListView.builder(
-              itemCount: _posts.length,
-              itemBuilder: (context, index) {
-                return berandaPost(labelPost: _posts[index]);
-              },
+//custom app bar
+          Padding(
+            padding: EdgeInsets.symmetric(
+                horizontal: horizontalPadding, vertical: verticalPadding),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Icon(Icons.home_work_rounded,
+                    color: Colors.teal, size: 65),
+                SizedBox(
+                  width: 100,
+                  height: 100,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SizedBox(
+                          width: 80,
+                          height: 80,
+                          child: CircleAvatar(
+                            backgroundColor: Colors.teal,
+                            child: Padding(
+                              padding: const EdgeInsets.all(4), // Border radius
+                              child: ClipOval(
+                                  child: Image.network(
+                                      'https://cdn.icon-icons.com/icons2/2468/PNG/512/user_icon_149329.png')),
+                            ),
+                          )),
+                      const SizedBox(
+                        child: Text('Mochamad Ridwan',
+                            style: TextStyle(fontSize: 10)),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
-          )
+          ),
+          //teks pembuka
+          const SizedBox(height: 20),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: const [
+              Text('Hai Ridwan,',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500)),
+              SizedBox(height: 10),
+              Text('Menu Aplikasi',
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold))
+            ],
+          ),
+          //garis pembatas
+          const SizedBox(height: 20),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: horizontalPadding),
+            child: const Divider(
+              color: Colors.teal,
+              thickness: 1,
+            ),
+          ),
+          const SizedBox(height: 20),
+          const Text('Silahkan pilih : ',
+              style: TextStyle(fontWeight: FontWeight.bold)),
+          //tombol menu aplikasi
+          Expanded(
+              child: SingleChildScrollView(
+            child: Column(
+              children: [
+                const SizedBox(height: 10),
+                ButtonTheme(
+                  child: ElevatedButton.icon(
+                    onPressed: () {},
+                    icon: const Icon(Icons.home),
+                    label: const Text('Beranda'),
+                    style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(300, 65),
+                        backgroundColor: Colors.teal),
+                  ),
+                ),
+                const SizedBox(height: 10),
+                ButtonTheme(
+                  child: ElevatedButton.icon(
+                    onPressed: () {},
+                    icon: const Icon(Icons.person),
+                    label: const Text('Profil'),
+                    style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(300, 65),
+                        backgroundColor: Colors.teal),
+                  ),
+                ),
+                const SizedBox(height: 10),
+                ButtonTheme(
+                  child: ElevatedButton.icon(
+                    onPressed: () {},
+                    icon: const Icon(Icons.info),
+                    label: const Text('Tentang'),
+                    style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(300, 65),
+                        backgroundColor: Colors.teal),
+                  ),
+                ),
+                const SizedBox(height: 10),
+                ButtonTheme(
+                  child: ElevatedButton.icon(
+                    onPressed: () => Navigator.of(context).pop(),
+                    icon: const Icon(Icons.arrow_back_ios),
+                    label: const Text('Kembali'),
+                    style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(300, 65),
+                        backgroundColor: Colors.teal),
+                  ),
+                ),
+              ],
+            ),
+          ))
         ],
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.deepOrangeAccent,
-        child: const Icon(
-          Icons.arrow_back_ios_new,
-          size: 30,
-          color: Colors.white,
-        ),
-        onPressed: () {
-          Navigator.of(context).pop();
-        },
       ),
     );
   }
