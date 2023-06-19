@@ -101,6 +101,16 @@ class BerandaPage extends StatelessWidget {
                     minimumSize: const Size(300, 65),
                     backgroundColor: Colors.indigo),
               )),
+              const SizedBox(height: 10),
+              ButtonTheme(
+                  child: ElevatedButton.icon(
+                onPressed: () => Navigator.of(context).pop(),
+                icon: const Icon(Icons.home),
+                label: const Text('Kembali'),
+                style: ElevatedButton.styleFrom(
+                    minimumSize: const Size(300, 65),
+                    backgroundColor: Colors.indigo),
+              )),
             ],
           ),
         ))
