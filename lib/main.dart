@@ -33,12 +33,12 @@ class FormMasuk extends StatelessWidget {
               const Icon(Icons.person, size: 175, color: Colors.blue),
 
               // !!!  Teks Pembuka
-              const SizedBox(height: 50),
+              const SizedBox(height: 35),
               const Text(
                 'Selamat Datang',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 50),
+              const SizedBox(height: 15),
               const Text('Silahkan Masuk', style: TextStyle(fontSize: 14)),
 
               // !!! Form input username
